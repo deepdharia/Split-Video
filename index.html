@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Split Video Online Free — Cut Clips for Reels, Shorts & WhatsApp | SplitVideo</title>
+<meta name="description" content="Split any video into equal clips right in your browser — no upload, no signup, no watermark. Choose clip length or number of parts. Free, private, works on mobile.">
+<link rel="canonical" href="https://splitvideo.in/">
+<meta property="og:title" content="Split Video Online Free — SplitVideo">
+<meta property="og:description" content="Split any video into equal clips in your browser. No upload, no signup, no watermark.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://splitvideo.in/">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/css/style.css">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebApplication",
+  "name": "SplitVideo",
+  "url": "https://splitvideo.in/",
+  "applicationCategory": "MultimediaApplication",
+  "operatingSystem": "Any (runs in browser)",
+  "offers": { "@type": "Offer", "price": "0", "priceCurrency": "INR" },
+  "description": "Free browser-based tool to split videos into equal clips by duration or number of parts."
+}
+</script>
+</head>
+<body>
+
+<header class="site">
+  <div class="wrap">
+    <div class="logo">Split<span>Video</span></div>
+    <nav class="site">
+      <a href="/#tool">Tool</a>
+      <a href="/blog/">Guides</a>
+      <a href="/about.html">About</a>
+      <a href="/contact.html">Contact</a>
+    </nav>
+  </div>
+</header>
+
+<main class="tool-hero" id="tool">
+  <div class="wrap">
+    <div class="intro">
+      <h1>Split a video into clips, right here in your browser</h1>
+      <p class="lede">Upload once. Choose a clip length or number of parts. Every clip downloads automatically — no account, no watermark, and your video never leaves your device.</p>
+    </div>
+
+    <div class="dropzone" id="dropzone">
+      <div class="dz-title">Drop a video here, or tap to choose one</div>
+      <div class="dz-sub">MP4, MOV, or WebM — processed entirely on your device</div>
+      <input type="file" id="fileInput" accept="video/*">
+    </div>
+    <div class="limits-note">Works best under 500MB. Bigger files can run out of browser memory — we're building support for larger uploads.</div>
+
+    <div class="error-box" id="errorBox"></div>
+
+    <div class="controls" id="controls">
+      <div class="file-meta" id="fileMeta"></div>
+
+      <div class="split-mode-toggle">
+        <button data-mode="duration" class="active">By clip length</button>
+        <button data-mode="parts">By number of parts</button>
+      </div>
+
+      <div id="durationFields">
+        <div class="field-row">
+          <label>Clip length</label>
+          <div class="preset-chips">
+            <button data-seconds="15">15s</button>
+            <button data-seconds="30">30s</button>
+            <button data-seconds="60" class="active">60s</button>
+            <button data-seconds="90">90s</button>
+          </div>
+        </div>
+        <div class="field-row">
+          <label for="customSeconds">Or set a custom length (seconds)</label>
+          <input type="number" id="customSeconds" placeholder="e.g. 45" min="1">
+        </div>
+      </div>
+
+      <div id="partsFields" style="display:none;">
+        <div class="field-row">
+          <label for="partsCount">Number of equal parts</label>
+          <input type="number" id="partsCount" value="4" min="2">
+        </div>
+      </div>
+
+      <button class="btn-primary" id="splitBtn">Split video</button>
+
+      <div class="progress-wrap" id="progressWrap">
+        <div class="progress-label" id="progressLabel">
+          <span class="stage">Preparing…</span>
+          <span class="pct">0%</span>
+        </div>
+        <div class="progress-track"><div class="progress-fill" id="progressFill"></div></div>
+      </div>
+
+      <div class="clip-list" id="clipList"></div>
+    </div>
+  </div>
+</main>
+
+<section class="content">
+  <div class="wrap" style="max-width: var(--max-w); margin:0 auto;">
+    <h2>How it works</h2>
+    <p>SplitVideo runs entirely in your browser using WebAssembly — the same technology that lets apps like Figma run without installing anything. Your video is never uploaded to a server, which means it's private by default and works even on a slow connection, since only the tool itself loads from the internet, not your file.</p>
+
+    <h2>Frequently asked</h2>
+    <dl class="faq">
+      <dt>Does my video get uploaded anywhere?</dt>
+      <dd>No. Splitting happens on your device. Nothing leaves your browser.</dd>
+      <dt>Is there a watermark?</dt>
+      <dd>No watermark, no login required.</dd>
+      <dt>What file size can I split?</dt>
+      <dd>Up to 500MB reliably. Larger files risk crashing the browser tab — we're working on a way to handle bigger uploads.</dd>
+      <dt>Will this work on my phone?</dt>
+      <dd>Yes — it's built mobile-first. Performance depends on your phone's memory for larger files.</dd>
+    </dl>
+  </div>
+</section>
+
+<footer class="site">
+  <div class="wrap">
+    <div>© <span id="year"></span> SplitVideo. Built in India.</div>
+    <div>
+      <a href="/about.html">About</a>
+      <a href="/privacy-policy.html">Privacy</a>
+      <a href="/terms.html">Terms</a>
+      <a href="/contact.html">Contact</a>
+    </div>
+  </div>
+</footer>
+
+<script>document.getElementById('year').textContent = new Date().getFullYear();</script>
+<script src="https://unpkg.com/@ffmpeg/ffmpeg@0.12.10/dist/umd/ffmpeg.js"></script>
+<script src="https://unpkg.com/@ffmpeg/util@0.12.1/dist/umd/index.js"></script>
+<script src="/js/splitter.js"></script>
+</body>
+</html>

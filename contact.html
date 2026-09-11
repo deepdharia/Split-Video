@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Contact — SplitVideo</title>
+<meta name="description" content="Get in touch with the SplitVideo team.">
+<link rel="canonical" href="https://splitvideo.in/contact.html">
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/css/style.css">
+</head>
+<body>
+<header class="site">
+  <div class="wrap">
+    <div class="logo">Split<span>Video</span></div>
+    <nav class="site">
+      <a href="/#tool">Tool</a>
+      <a href="/blog/">Guides</a>
+      <a href="/about.html">About</a>
+      <a href="/contact.html">Contact</a>
+    </nav>
+  </div>
+</header>
+
+<div class="page-content">
+  <h1>Contact</h1>
+  <p>Found a bug, have a feature idea, or just want to say hi? Send a message below — it goes straight into a spreadsheet we actually check.</p>
+
+  <!--
+    STEP 1: Create a Google Form with fields: Name, Email, Message.
+    STEP 2: Link it to a Google Sheet (Form's "Responses" tab → create spreadsheet).
+    STEP 3: Get the form's embed link: Send → embed (<>) icon → copy the src URL.
+    STEP 4: Paste that URL below, replacing YOUR_GOOGLE_FORM_EMBED_URL.
+  -->
+  <iframe
+    src="https://docs.google.com/forms/d/e/1FAIpQLScGkJUpS8CytV1QH5KIHpnK8r6CHc9SzxMMsp4volPbhUBHUg/viewform?embedded=true"
+    width="100%"
+    height="692"
+    frameborder="0"
+    style="border:1px solid var(--line); border-radius:10px; margin-top:24px;">
+    Loading form…
+  </iframe>
+
+  <p style="margin-top:24px;">Or email directly: <strong>build@splitvideo.in</strong></p>
+</div>
+
+<footer class="site">
+  <div class="wrap">
+    <div>© <span id="year"></span> SplitVideo. Built in India.</div>
+    <div>
+      <a href="/about.html">About</a>
+      <a href="/privacy-policy.html">Privacy</a>
+      <a href="/terms.html">Terms</a>
+      <a href="/contact.html">Contact</a>
+    </div>
+  </div>
+</footer>
+<script>document.getElementById('year').textContent = new Date().getFullYear();</script>
+</body>
+</html>
